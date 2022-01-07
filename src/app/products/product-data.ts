@@ -1,0 +1,111 @@
+import { InMemoryDbService } from 'angular-in-memory-web-api';
+import { Product } from './product';
+
+export class ProductData implements InMemoryDbService {
+  createDb(): { products: Product[] } {
+    const products: Product[] = [
+      {
+        id: 7631,
+        productCode: 'HEH-9133',
+        productName: 'On Cloud Nine Pillow',
+        price: 24.99,
+        imageUrl: 'https://www.bedsdirect.co.za/images/cloud_nine_new_new/cloud9_pillow.jpg',
+        description: 'Sociosqu facilisis duis ...',
+        category: 'Home>Home Decor>Pillows|Back In Stock',
+        releaseDate: '2018-03-03',
+      },
+      {
+        id: 7615,
+        productCode: 'HEH-2245',
+        productName: 'Simply Sweet Blouse',
+        price: 42,
+        imageUrl: 'https://ae01.alicdn.com/kf/He228720935d94edead26ee6b6a37a63fE/Summer-Girls-Shirt-Simple-Sweet-And-Versatile-Short-Sleeve-Loose-Lapel-Top-Baby-Girl-Blouse.jpg',
+        description: 'Sociosqu facilisis duis ...',
+        category: 'Clothing>Tops>Blouses|Clearance|Tops On Sale',
+        releaseDate: '2018-03-20',
+      },
+      {
+        id: 8100,
+        productCode: 'WKS-6016',
+        productName: 'Uptown Girl Blouse',
+        price: 58,
+        imageUrl: 'data:image/jpeg;base64,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',
+        description: 'Sociosqu facilisis duis ...',
+        category: 'Clothing>Tops>Blouses',
+        releaseDate: '2018-03-16',
+      },
+      {
+        id: 6489,
+        productCode: 'DKO-PROF',
+        productName: 'Knock Your Socks Off Lace-Up Heels',
+        price: 38,
+        imageUrl: 'https://i.pinimg.com/originals/d8/9d/8d/d89d8d9394b9885e9d6646c9532eeb7e.jpg',
+        description: 'Sociosqu facilisis duis ...',
+        category: 'Shoes>Heels>Lace-Up Heels|Featured Products|Shoes On Sale',
+        releaseDate: '2018-02-28',
+      },
+      {
+        id: 7732,
+        productCode: 'HEH-2172',
+        productName: 'My Cup of Tea Sweater',
+        price: 68,
+        imageUrl: 'https://i.etsystatic.com/10563340/r/il/0ad5d9/1758798845/il_794xN.1758798845_qbnn.jpg',
+        description: 'Sociosqu facilisis duis ...',
+        category: 'Clothing>Tops>Sweaters',
+        releaseDate: '2018-03-01',
+      },
+      {
+        id: 7609,
+        productCode: 'HEH-2211',
+        productName: 'Walk On Out Slip On Sneakers',
+        price: 34.99,
+        imageUrl: 'https://pyxis.nymag.com/v1/imgs/e37/875/13732e4e8d7e8eb5c20c4ca47a5ea96734-konhill-womens-casual-walking-shoes.2x.rsquare.w600.jpg',
+        description: 'Sociosqu facilisis duis ...',
+        category: 'Shoes>Sneakers>Slip-On Sneakers',
+        releaseDate: '2018-03-20',
+      },
+      {
+        id: 7675,
+        productCode: 'DKO-CAMEL',
+        productName: 'Warm Hearts Sweater',
+        price: 54.49,
+        imageUrl: 'https://m.media-amazon.com/images/I/51Vp+7dJ-HL._AC_.jpg',
+        description: 'Sociosqu facilisis duis ...',
+        category: 'Clothing>Tops>Sweaters|Back In Stock|Featured Products',
+        releaseDate: '2018-03-19',
+      },
+      {
+        id: 7463,
+        productCode: 'WKS-5026',
+        productName: 'Silver Lining Dress',
+        price: 62,
+        imageUrl: 'https://cdn.shopify.com/s/files/1/0009/3080/7855/products/Silver_Lining_Dress2_2048x2048.jpg?v=1549030965',
+        description: 'Sociosqu facilisis duis ...',
+        category: 'Dresses>Formal Dresses|All Dresses',
+        releaseDate: '2018-03-01',
+      },
+      {
+        id: 7677,
+        productCode: 'PCH-8738',
+        productName: 'Follow The Beat Sneakers',
+        price: 32,
+        imageUrl: 'https://cdn.shopify.com/s/files/1/1708/7943/products/9314_COPYRIGHT_REDDRESSBOUTIQUE_2018.jpg?v=1610079875',
+        description: 'Sociosqu facilisis duis ...',
+        category: 'Shoes>Sneakers>Slip-On Sneakers',
+        releaseDate: '2019-01-31',
+      },
+      {
+        id: 8099,
+        productCode: 'PCH-8475',
+        productName: 'Cup of Joe Pillow',
+        price: 36,
+        imageUrl: 'https://m.media-amazon.com/images/I/61YBiMOCkDS._AC_SX466_.jpg',
+        description: 'Sociosqu facilisis duis ...',
+        category: 'Home>Home Decor>Pillows',
+        releaseDate: '2018-02-28',
+      },
+    ];
+
+    return { products };
+  }
+}
