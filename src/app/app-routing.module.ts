@@ -9,11 +9,6 @@ const routes: Routes = [
     component: HomeComponent,
   },
   {
-    path: 'products',
-    loadChildren: () =>
-      import('./products/products.module').then((m) => m.ProductsModule),
-  },
-  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
