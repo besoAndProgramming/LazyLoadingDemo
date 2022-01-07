@@ -12,13 +12,11 @@ import { HttpClientModule } from '@angular/common/http';
 // Imports for loading & configuring the in-memory web api
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { ProductData } from './products/product-data';
-import { ProductsModule } from './products/products.module';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, NotFoundComponent],
   imports: [
     BrowserModule,
-    ProductsModule,
     AppRoutingModule,
     BrowserModule,
     BrowserAnimationsModule,
